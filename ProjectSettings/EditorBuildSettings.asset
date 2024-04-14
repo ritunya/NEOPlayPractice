@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/otameshi.unity
+    guid: c875aed4a629c427d9ba8295545245d5
+  - enabled: 1
     path: Assets/Scenes/shisen.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
