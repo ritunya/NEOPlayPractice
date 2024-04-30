@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/otameshi.unity
-    guid: c875aed4a629c427d9ba8295545245d5
-  - enabled: 1
     path: Assets/Scenes/shisen.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Home.unity
+    guid: 7dc65afc39eca48d1a1f8fb2367421cb
+  - enabled: 1
+    path: Assets/Scenes/otameshi.unity
+    guid: c875aed4a629c427d9ba8295545245d5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b8b3a7cdd795e4df09deeec0f876fd4b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ee84a07c330494e30b18dfef74d2c542, type: 2}
