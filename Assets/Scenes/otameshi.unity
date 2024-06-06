@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18029517, g: 0.22573823, b: 0.30694664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -998,6 +998,7 @@ GameObject:
   - component: {fileID: 1688563379}
   - component: {fileID: 1688563381}
   - component: {fileID: 1688563380}
+  - component: {fileID: 1688563382}
   m_Layer: 5
   m_Name: User Utterance
   m_TagString: Untagged
@@ -1045,7 +1046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: pi!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91e16fecf6e904efba8f2cbfccc2099a, type: 2}
   m_sharedMaterial: {fileID: 6041538698074672190, guid: 91e16fecf6e904efba8f2cbfccc2099a, type: 2}
@@ -1122,6 +1123,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688563378}
   m_CullTransparentMesh: 1
+--- !u!114 &1688563382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688563378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ef840ca74714def864c9f421b7ecfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userText: {fileID: 1688563380}
 --- !u!1 &1812149036
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using Oculus.Interaction;
+using Oculus.Platform.Models;
 using OVR;
 using UnityEngine;
 
 public class RabbitEscapeRun : MonoBehaviour
 {
     private Animator anim;  //Animatorをanimという変数で定義する
+    GameObject UserUtterance; //User Utteranceそのものが入る変数
+    WordHantei wordHanteiScript; // WordHanteiScriptが入る変数
 
     // Start is called before the first frame update
     void Start()
     {
         //変数animに、Animatorコンポーネントを設定する
         anim = gameObject.GetComponent<Animator>();
+
+        //user utteranceの中にあるWordHanteiScriptを取得して変数に格納する
+        //wordHanteiScript = UserUtterance.GetComponent<WordHantei>();
     }
 
     // Update is called once per frame
@@ -23,6 +29,9 @@ public class RabbitEscapeRun : MonoBehaviour
         // 座標を取得
         Vector3 pos = myTransform.position;
         Quaternion myRotation = transform.rotation;
+
+        //Debug.Log(wordHanteiScript.userText.text);
+        //↑エラー、音声をテキスト化したものをlogに出したいが、中身がないと言われる
 
         // "rabbit_escape"パラメータがtrueの場合に処理を実行
         if (anim.GetBool("rabbit_escape"))
