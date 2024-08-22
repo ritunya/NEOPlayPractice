@@ -561,7 +561,6 @@ MonoBehaviour:
   - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   relaxedResolution: 0
-  _lastRefreshSeconds: 1718929558.168907
 --- !u!114 &1437732801068253546
 MonoBehaviour:
   m_ObjectHideFlags: 0
