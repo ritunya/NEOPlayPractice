@@ -8,7 +8,10 @@ using static UnityEngine.GraphicsBuffer;
 public class WordHantei : MonoBehaviour
 {
     public TextMeshProUGUI userText;
-    string target = "かわいい";
+    public string target = "撫でられるかな";
+    public string target2 = "なでられるかな";
+    public RabbitEscapeRun run;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +39,14 @@ public class WordHantei : MonoBehaviour
             Debug.Log($"{target}が文章の中に含まれていました。");
             //Bool型のパラメーターをTrueにする
             //anim.SetBool("rabbit_escape", true);
+            //transform.Rotate(0f, 150f, 0f);  // y軸を100°回転
+            //anim.SetBool("rabbit_escape", true);
         }
         else
         {
             Debug.Log($"{target}は文章の中に含まれていません。");
         }
     }
+
+  
 }

@@ -14,15 +14,19 @@ public class TitleScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Return))
+        //shisen1へ
+        if (OVRInput.GetUp(OVRInput.Button.Three))
         {
-            Invoke("ChangeScene", 1.5f);
+            Invoke("ChangeScene1", 1.5f);
             Debug.Log("change!");
         }
+        if (Input.GetKey(KeyCode.A))
+        {
+            Invoke("ChangeScene1", 1.5f);
+            Debug.Log("change!");
+        }
+
     }
 
-    void ChangeScene()
-    {
-        SceneManager.LoadScene("shisen");
-    }
+
 }

@@ -5,11 +5,20 @@ using Oculus.Platform.Models;
 using OVR;
 using UnityEngine;
 
+using UnityEngine.UI;
+using TMPro;
+using static UnityEngine.GraphicsBuffer;
+
 public class RabbitEscapeRun : MonoBehaviour
 {
     private Animator anim;  //Animatorをanimという変数で定義する
     GameObject UserUtterance; //User Utteranceそのものが入る変数
     WordHantei wordHanteiScript; // WordHanteiScriptが入る変数
+    //public WordHantei word;
+    public TextMeshProUGUI userText;
+    string target = "撫でられるかな";
+
+    public WordHantei word;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +39,10 @@ public class RabbitEscapeRun : MonoBehaviour
         Vector3 pos = myTransform.position;
         Quaternion myRotation = transform.rotation;
 
+        //userText = this.GetComponent<TextMeshProUGUI>();
+        //userText = word.userText;
+
+
         //Debug.Log(wordHanteiScript.userText.text);
         //↑エラー、音声をテキスト化したものをlogに出したいが、中身がないと言われる
 
@@ -37,9 +50,7 @@ public class RabbitEscapeRun : MonoBehaviour
         if (anim.GetBool("rabbit_escape"))
         {
             // ここにrabbit_escapeがtrueの場合に実行したい処理を書く
-            Debug.Log("rabbit_escape is true!");
-
-
+            //Debug.Log("rabbit_escape is true!");
 
             //pos.x += 0.01f;    // x座標へ0.01加算
             //pos.y += 0.01f;    // y座標へ0.01加算
@@ -49,32 +60,45 @@ public class RabbitEscapeRun : MonoBehaviour
         }
     }
 
-    // 当たった時に呼ばれる関数　衝突開始
-    void OnCollisionEnter(Collision collision)
+    // 他のオブジェクトとのすり抜け中
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Look")
+        if (other.gameObject.tag == "Look")
         {
-
+            
             if (Time.timeSinceLevelLoad > 10.0f)
             {
-                Debug.Log("衝突"); // ログを表示する
+                Debug.Log("すり抜け"); // ログを表示する
 
-                transform.Rotate(0f, 150f, 0f);  // y軸を100°回転
+                if (userText.text.Contains("でられるかな"))
+                {
+                    Debug.Log($"{target}が文章の中に含まれていました。");
+                    //Bool型のパラメーターをTrueにする
+                    //anim.SetBool("rabbit_escape", true);
+                    transform.Rotate(0f, 150f, 0f);  // y軸を100°回転
+                    anim.SetBool("rabbit_escape", true);
+                }
+                else
+                {
+                    Debug.Log($"{target}は文章の中に含まれていません。");
+                }
 
                 //Bool型のパラメーターをTrueにする
-                anim.SetBool("rabbit_escape", true);
+                //anim.SetBool("rabbit_escape", true);
+
             }
         }
     }
 
-    // 他のオブジェクトとのすり抜け中
-    //void OnCollitionStay(Collider other)
+        // 当たった時に呼ばれる関数　衝突開始
+    //void OnCollisionEnter(Collision collision)
     //{
-    //    if (other.gameObject.tag == "Look")
+    //    if (collision.gameObject.tag == "Look")
     //    {
+
     //        if (Time.timeSinceLevelLoad > 10.0f)
     //        {
-    //            Debug.Log("すり抜け"); // ログを表示する
+    //            Debug.Log("衝突"); // ログを表示する
 
     //            transform.Rotate(0f, 150f, 0f);  // y軸を100°回転
 
@@ -84,3 +108,4 @@ public class RabbitEscapeRun : MonoBehaviour
     //    }
     //}
 }
+
